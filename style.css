@@ -303,3 +303,17 @@ textarea{
     }
 
 }
+
+@media (max-width: 571px) {
+    .spinner {
+        width: 43px;
+        height: 33px;
+    }
+}
+
+@media (max-width: 423px) {
+    .spinner {
+        width: 49px;
+        height: 33px;
+    }
+}
