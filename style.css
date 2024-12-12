@@ -224,7 +224,6 @@ textarea{
 }
 
 .data-field{
-    height: 250px;
     display: none;
     width: 700px;
     height: 300px;
@@ -277,7 +276,7 @@ textarea{
 
     .data-field {
         width: 90%;
-        height: auto;
+        height: 55%;
         margin: 20px auto;
     }
 }
@@ -334,7 +333,7 @@ textarea{
 
     .data-field {
         width: 95%;
-        height: auto;
+        height: 55%;
         padding: 8px;
         font-size: 14px;
     }
