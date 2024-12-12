@@ -1,4 +1,5 @@
 window.addEventListener('load', () => {
+    let inputContanier = document.querySelector('.input-box-container')
     let inputbox = document.querySelector('.input-box');
     let responsewrap = document.querySelector('.data-field');
     let loader = document.querySelector('.spinner');
@@ -43,6 +44,7 @@ window.addEventListener('load', () => {
       ai_response = ai_response.replace(/(\*\*)(.*?)\1/g, '<b>$2</b>'); 
       ai_response = ai_response.replaceAll('*', '&#8226;'); 
       responsewrap.innerHTML = ai_response; 
+      
   
       const heading = document.getElementsByClassName('heading')[0];
       const main_conatiner = document.getElementsByClassName('data-field')[0];
@@ -51,6 +53,7 @@ window.addEventListener('load', () => {
           heading.style.display = 'none';
           main_conatiner.style.display ='block'
           inputbox.value = '';
+          // inputContanier.style.marginTop = '30px'
         }
     });
   
