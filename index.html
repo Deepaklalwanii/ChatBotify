@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="shortcut icon" href="favicon/favicon-32x32.png" type="image/x-icon">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -18,8 +19,6 @@
             </div>
             <div class="login-container">
                 <i class="bi bi-brightness-high-fill" id="theme-toggle"></i>
-                <!-- <button class="login-btn">Log in</button>
-                <button class="signup-btn">Sign up</button> -->
             </div>
         </header>
         <pre class="data-field"></pre>
@@ -28,7 +27,7 @@
                 <h3>What can I help with?</h3>
             </div>
             <div class="input-box-container">
-                <textarea class="input-box" type="text" name="text" placeholder="Message ChatBotify" autocomplete="off"></textarea>
+                <textarea class="input-box" data-id="" type="text" name="text" placeholder="Message ChatBotify" autocomplete="off"></textarea>
                 <div class="spinner"></div>
                 <button class="input-btn"><i class="bi bi-arrow-up-short"></i></button>
             </div>
@@ -47,5 +46,6 @@
 
   gtag('config', 'G-QK7B08EXXF');
 </script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </body>
 </html>

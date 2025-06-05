@@ -39,23 +39,37 @@ window.addEventListener('load', () => {
   
     let inputButton = document.querySelector('.input-btn');
     inputButton.addEventListener('click', async (e) => {
-      e.preventDefault(); 
-      var ai_response = await getdata(inputbox.value);
-      ai_response = ai_response.replace(/(\*\*)(.*?)\1/g, '<b>$2</b>'); 
-      ai_response = ai_response.replaceAll('*', '&#8226;'); 
-      responsewrap.innerHTML = ai_response; 
-      
+  e.preventDefault(); 
+  const userMessage = inputbox.value.trim();
+  if (!userMessage) return;
+
+  // Append user message
   
-      const heading = document.getElementsByClassName('heading')[0];
-      const main_conatiner = document.getElementsByClassName('data-field')[0];
-      stateHandle();
-      if (heading) {
-          heading.style.display = 'none';
-          main_conatiner.style.display ='block'
-          inputbox.value = '';
-          // inputContanier.style.marginTop = '30px'
-        }
-    });
+  responsewrap.innerHTML += `<div class='user-message-container'><div class="message-user"> ${userMessage}</div></div>`;
+
+  const ai_response = await getdata(userMessage);
+
+  // Format AI response
+  let formattedResponse = ai_response.replace(/(\*\*)(.*?)\1/g, '<b>$2</b>'); 
+  formattedResponse = formattedResponse.replaceAll('*', '&#8226;');
+
+  // Append AI message
+
+  responsewrap.innerHTML += `<div class="ai-message-container"></div><div class="message-ai"> ${formattedResponse}</div></div>`;
+
+  const heading = document.getElementsByClassName('heading')[0];
+  const main_conatiner = document.getElementsByClassName('data-field')[0];
+  stateHandle();
+
+  if (heading) {
+    heading.style.display = 'none';
+    main_conatiner.style.display ='block';
+    inputbox.value = '';
+  }
+
+  // Scroll to bottom
+  responsewrap.scrollTop = responsewrap.scrollHeight;
+});
   
     function stateHandle() {
       let inputButton = document.querySelector('.input-btn');
@@ -85,6 +99,7 @@ window.addEventListener('load', () => {
   toggleButton.addEventListener('click', () => {
       document.body.classList.toggle('lightmode');
   });
+
   
   
 });
