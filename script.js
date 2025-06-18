@@ -37,8 +37,8 @@ window.addEventListener('load', () => {
       }
     }
   
-    let inputButton = document.querySelector('.input-btn');
-    inputButton.addEventListener('click', async (e) => {
+  let inputButton = document.querySelector('.input-btn');
+  inputButton.addEventListener('click', async (e) => {
   e.preventDefault(); 
   const userMessage = inputbox.value.trim();
   if (!userMessage) return;
@@ -89,10 +89,12 @@ window.addEventListener('load', () => {
       e.preventDefault();  
       inputButton.click(); 
       inputbox.value = '';
+    inputbox.style.marginTop = 'auto';
+    inputbox.style.marginBottom = '10px';
+    inputbox.scrollIntoView({ behavior: 'smooth', block: 'end' });
     }
   });
   stateHandle();
-
 
 //for dark & light mode
   const toggleButton = document.getElementById('theme-toggle');
